@@ -1,5 +1,5 @@
 //Este módulo irá capturar os dados de entrada da aplicação
-import geraSenha from "./geradores";
+import geraSenha from "./geradores.js";
 
 const senhaGerada = document.querySelector('.senha-gerada');
 const qtd = document.querySelector('.qtd');
@@ -14,7 +14,7 @@ const aviso = document.querySelector('.aviso');
 const senha = document.querySelector('.senha');
 
 
-export default () => {
+export default function formGeraSenha (){
 
     btn.addEventListener('click', function criar(){
         senha.innerHTML = gera();
@@ -36,7 +36,7 @@ export default () => {
     btnClean.addEventListener('click', ()=>{
         senha.innerHTML = '';
     });
-}
+
 
 function voltar(){
     setTimeout(()=>{
@@ -59,5 +59,6 @@ function gera(){
 
 function copyClipboard(input){
     navigator.clipboard.writeText(input);
+}
 }
 
